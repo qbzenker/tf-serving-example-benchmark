@@ -1,0 +1,11 @@
+version: '3.7'
+services:  
+  tf_serving:
+    image: tensorflow/serving:2.2.0
+    volumes: 
+      - "../Downloads/universal-sentence-encoder_4:/models/use"
+    environment: 
+      MODEL_NAME: "use"
+    ports:
+      - "8503:8501"
+      - "8500:8500"
